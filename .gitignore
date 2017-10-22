@@ -1,7 +1,7 @@
 # Large datasets and pickled datastructures
-data/raw_data/
-data/labeled_data/
-data/split_data/
+data/raw_data/*
+data/labeled_data/*
+data/split_data/*
 
 embedding/word2vec_model*
 
