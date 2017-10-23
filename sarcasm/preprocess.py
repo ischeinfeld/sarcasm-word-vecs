@@ -29,15 +29,15 @@ def main(arguments):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('-s', '--sartic-tweets', dest='sar_dir',
                         help="Directory of example sartic tweets",
-                        default="../../data/labeled_data/sarcastic/")
+                        default="../data/labeled_data/sarcastic/")
     parser.add_argument('-p', '--positive-tweets', dest='pos_dir',
                         help="Directory of example positive tweets",
-                        default="../../data/labeled_data/positive/")
+                        default="../data/labeled_data/positive/")
     parser.add_argument('-n', '--negative-tweets', dest='neg_dir',
                         help="Directory of example negative tweets",
-                        default="../../data/labeled_data/negative/")
+                        default="../data/labeled_data/negative/")
     parser.add_argument('-c', '--sample-count', dest='sample_count',
-                        help="Max number of samples of each sentiment",
+                        help="Max number of samples of each class",
                         default="10000") # 10k default, ~300k max with current data
 
     args = parser.parse_args(arguments)

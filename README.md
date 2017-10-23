@@ -20,11 +20,31 @@ Word embeddings are handled in `/embedding/`. Current embeddings are built with 
 **TODO** Add detail
 
 # Sentiment
-Training the sentiment model is handled in `/sentiment/`. A sentiment classifier is trained on 1 million each of positive and negative tweets (with keyword hashtags removed) using a Naive Bayes Classifier. This model classifies positive and negative tweets with an f1-score of 0.88. The features of this model will be used to augment word-vectors in sarcasm detection.
+Training the sentiment model is handled in `/sentiment/`. A sentiment classifier is trained on ~1 million~ 800k each of positive and negative tweets (with keyword hashtags removed) using a Naive Bayes Classifier. This model classifies positive and negative tweets with an f1-score of 0.88. The features of this model will be used to augment word-vectors in sarcasm detection.
 
 **TODO** Add detail
 
 # Sarcasm
 Sarcasm detection is handled in `/sarcasm/`. Here two CNN's can be trained, one to predict sarcasm from just word embeddings and one to predict sarcasm from word embedding vectors agumented with local sentiment features.
 
+## Preprocessing
+`preprocess.py` 
+
 **TODO** Add detail
+
+## Processing
+`process.py`
+
+**TODO** Add detail
+
+## CNN
+
+With 10 epochs on training size 
+| Ngram Sentiment Feature | Test Performance |
+| ----------------------- |------------------| 
+| 0 | 78.4 |
+| 1 | 78.2 |
+| 2 | 79.3 |
+| 3 | 80.1 |
+| 4 | 80.4 |
+| 5 | 80.4 |

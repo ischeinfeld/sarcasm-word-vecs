@@ -26,10 +26,9 @@ from conv_net_classes import Datum
 assume input file: 1st column label (int), and 2nd column is tweet (string) with space separated tokens
 """
 
-OUTFNAME_FORMAT = "preprocess_{}.tsv"
 LOG_FNAME = "process.log"
 INFNAME_FORMAT = "preprocess_{}.tsv"
-OUTFNAME_FORMAT = "process_{}.pkl"
+OUTFNAME_FORMAT = "process_{}_{}.pkl"
 EMBEDDING_FNAME = "../embedding/word2vec_model"
 CLF_FNAME = "../sentiment/clf_pipe.pkl"
 RAND_SEED = 178
@@ -65,8 +64,8 @@ def train_test(vocab):
     
     train_fname = INFNAME_FORMAT.format("train")
     test_fname = INFNAME_FORMAT.format("test")
-    output_train_fname = OUTFNAME_FORMAT.format("train")
-    output_test_fname = OUTFNAME_FORMAT.format("test")
+    output_train_fname = OUTFNAME_FORMAT.format("train", MAX_NGRAM)
+    output_test_fname = OUTFNAME_FORMAT.format("test", MAX_NGRAM)
 
     max_l = MAX_L_GIVEN
     
@@ -220,4 +219,4 @@ if __name__=="__main__":
 
     print("vocab size is {}.".format(len(vocab)))
     print('train_test')
-    train_test(vocab) # True placeholder
+    train_test(vocab)

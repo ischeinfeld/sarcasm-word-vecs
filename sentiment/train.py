@@ -39,7 +39,7 @@ def main(arguments):
                         default="../data/labeled_data/negative/")
     parser.add_argument('-c', '--sample-count', dest='sample_count',
                         help="Max number of samples of each sentiment",
-                        default="1000000")
+                        default="800000")
 
     args = parser.parse_args(arguments)
 

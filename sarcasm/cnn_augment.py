@@ -27,11 +27,12 @@ from conv_net_classes import MLPDropout
 from conv_net_classes import Iden
 from conv_net_classes import Datum
 
-IN_FNAME_FORMAT = "process_{}.pkl"
+IN_FNAME_FORMAT = "process_{}_{}.pkl"
 MODEL_FNAME_FORMAT = "cnn_agument_model.pkl"
 OUT_FNAME = "output_augment.pred"
 LOG_FNAME = "cnn_augment.log"
 N_EPOCHS = 10
+MAX_NGRAM = 5 # only used for selecting training file
 
 # configure logging
 warnings.filterwarnings("ignore")  #TODO what does this do? 
@@ -435,10 +436,10 @@ def make_idx_data(data, word_idx_map, max_l=20, filter_h=3):
    
 def test():
     
-    train_file = IN_FNAME_FORMAT.format("train")
+    train_file = IN_FNAME_FORMAT.format("train", MAX_NGRAM)
     model_file = MODEL_FNAME_FORMAT
     
-    test_file = IN_FNAME_FORMAT.format("test")
+    test_file = IN_FNAME_FORMAT.format("test", MAX_NGRAM)
     output_file = OUT_FNAME
     
     batch_size = 25
@@ -474,7 +475,7 @@ def test():
     
 
 def train():
-    train_file = IN_FNAME_FORMAT.format("train")
+    train_file = IN_FNAME_FORMAT.format("train", MAX_NGRAM)
     model_file = MODEL_FNAME_FORMAT
     
     batch_size = 100
