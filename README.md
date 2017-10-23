@@ -4,6 +4,7 @@ Data preprocessing is handled in `/data`.
 ## Raw Data
 Raw data is contained in `/data/raw_data/`. This is a directory of tab-seperated-variable files with the format
 
+| 0        | 1           | 2    | 3         |
 |----------|-------------|------|-----------|
 | tweet id | date / time | user | tweet text|
 
@@ -12,6 +13,8 @@ This is gathered into files `tweet.keyword` where each tweet in a file contains 
 ## Labeled Data
 POS labeled tweets are contained in `/data/labeled_data/`. The [CMU tweet POS tagger](http://www.cs.cmu.edu/~ark/TweetNLP/) (contained in `/data/ark-tweet-nlp-0.3.2/` was used to tokenize and tag each tweet using the command `./runTagger.sh —input-field 2 —output-format pretsv` on a source file in `raw_data/`. The result for a source file was written to `labeled_data/sarcasm/`, `labeled_data/positive/`, or `/labeled_data/negative` depending on the keyword. Source file `tweet.keyword` was written to `keyword.tsv`. This has format
 
+| 0                    | 1        | 2           | 3        | 4           | 5    | 6          |
+|----------------------|----------|-------------|----------|-------------|------|------------|
 | tokenized tweet text | POS tags | confidences | tweet id | data / time | user | tweet text |
 
 
