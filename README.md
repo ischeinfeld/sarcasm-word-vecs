@@ -4,6 +4,7 @@ Data preprocessing is handled in `/data`.
 ## Raw Data
 Raw data is contained in `/data/raw_data/`. This is a directory of tab-seperated-variable files with the format
 
+|----------|-------------|------|-----------|
 | tweet id | date / time | user | tweet text|
 
 This is gathered into files `tweet.keyword` where each tweet in a file contains #keyword.
@@ -44,7 +45,7 @@ Sarcasm detection is handled in `/sarcasm/`. Here two CNN's can be trained, one 
 
 With 10 epochs, training on 19000 examples and testing on 1000.
 
-| Ngram Sentiment Feature | Test Performance |
+| Ngram Sentiment Features | Test Performance |
 | ----------------------- |------------------| 
 | 0 | 78.4 |
 | 1 | 78.2 |
