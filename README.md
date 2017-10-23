@@ -39,7 +39,8 @@ Sarcasm detection is handled in `/sarcasm/`. Here two CNN's can be trained, one 
 
 ## CNN
 
-With 10 epochs on training size 
+With 10 epochs, training on 19000 examples and testing on 1000.
+
 | Ngram Sentiment Feature | Test Performance |
 | ----------------------- |------------------| 
 | 0 | 78.4 |
