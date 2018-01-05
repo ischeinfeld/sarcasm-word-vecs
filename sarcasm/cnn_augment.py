@@ -31,8 +31,8 @@ IN_FNAME_FORMAT = "process_{}_{}.pkl"
 MODEL_FNAME_FORMAT = "cnn_agument_model.pkl"
 OUT_FNAME = "output_augment.pred"
 LOG_FNAME = "cnn_augment.log"
-N_EPOCHS = 10
-MAX_NGRAM = 5 # only used for selecting training file
+N_EPOCHS = 20
+MAX_NGRAM = 4 # only used for selecting training file
 
 # configure logging
 warnings.filterwarnings("ignore")  #TODO what does this do? 

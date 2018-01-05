@@ -1,0 +1,42 @@
+loading data...
+data loaded!
+max length = 38
+[('image shape', 42, 104), ('filter shape', [(100, 1, 1, 104), (100, 1, 2, 104), (100, 1, 3, 104)]), ('pool size', [(42, 1), (41, 1), (40, 1)]), ('hidden_units', [100, 2]), ('dropout', 0.5), ('batch_size', 100), ('non_static', False), ('conv_non_linear', 'relu'), ('sqr_norm_lim', 9)]
+n_batches: 180
+n_train_batches: 162
+train size = (16200, 43), val size = (1800, 43)
+... training
+epoch 1, last training batch 0.544254, val perf 74.333333 %
+epoch 2, last training batch 0.479577, val perf 79.500000 %
+epoch 3, last training batch 0.509708, val perf 80.222222 %
+epoch 4, last training batch 0.446027, val perf 77.000000 %
+epoch 5, last training batch 0.410698, val perf 80.500000 %
+epoch 6, last training batch 0.341046, val perf 80.055556 %
+epoch 7, last training batch 0.343759, val perf 78.388889 %
+epoch 8, last training batch 0.374055, val perf 77.500000 %
+epoch 9, last training batch 0.281599, val perf 78.722222 %
+epoch 10, last training batch 0.321713, val perf 79.000000 %
+epoch 11, last training batch 0.337418, val perf 80.000000 %
+epoch 12, last training batch 0.279548, val perf 78.722222 %
+epoch 13, last training batch 0.375231, val perf 79.888889 %
+epoch 14, last training batch 0.231704, val perf 81.277778 %
+epoch 15, last training batch 0.245488, val perf 78.333333 %
+epoch 16, last training batch 0.245179, val perf 79.111111 %
+epoch 17, last training batch 0.290058, val perf 79.666667 %
+epoch 18, last training batch 0.251886, val perf 78.666667 %
+epoch 19, last training batch 0.252385, val perf 79.611111 %
+epoch 20, last training batch 0.244804, val perf 79.277778 %
+epoch 21, last training batch 0.151442, val perf 80.611111 %
+epoch 22, last training batch 0.248777, val perf 80.055556 %
+epoch 23, last training batch 0.233723, val perf 78.944444 %
+epoch 24, last training batch 0.241728, val perf 79.333333 %
+epoch 25, last training batch 0.263162, val perf 80.000000 %
+epoch 26, last training batch 0.183172, val perf 79.666667 %
+epoch 27, last training batch 0.148805, val perf 79.555556 %
+epoch 28, last training batch 0.183098, val perf 79.555556 %
+epoch 29, last training batch 0.095948, val perf 81.055556 %
+epoch 30, last training batch 0.166014, val perf 79.833333 %
+test perf: 0.812777777778
+[('image shape', 42, 104), ('filter shape', [(100, 1, 1, 104), (100, 1, 2, 104), (100, 1, 3, 104)]), ('pool size', [(42, 1), (41, 1), (40, 1)]), ('hidden_units', [100, 2]), ('dropout', 0.5), ('batch_size', 25), ('non_static', False), ('conv_non_linear', 'relu'), ('sqr_norm_lim', 9)]
+test size 1000
+test perf 80.900000 %

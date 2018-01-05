@@ -56,3 +56,6 @@ With 10 epochs, training on 19000 examples and testing on 1000.
 | 3 | 80.1 |
 | 4 | 80.4 |
 | 5 | 80.4 |
+
+Using TextBlob gives 5 score of 78.9
+Using Vader gives 5 score of 76.6

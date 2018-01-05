@@ -1,0 +1,22 @@
+loading data...
+data loaded!
+max length = 38
+[('image shape', 42, 104), ('filter shape', [(100, 1, 1, 104), (100, 1, 2, 104), (100, 1, 3, 104)]), ('pool size', [(42, 1), (41, 1), (40, 1)]), ('hidden_units', [100, 2]), ('dropout', 0.5), ('batch_size', 100), ('non_static', False), ('conv_non_linear', 'relu'), ('sqr_norm_lim', 9)]
+n_batches: 180
+n_train_batches: 162
+train size = (16200, 43), val size = (1800, 43)
+... training
+epoch 1, last training batch 0.544254, val perf 74.333333 %
+epoch 2, last training batch 0.479577, val perf 79.500000 %
+epoch 3, last training batch 0.509708, val perf 80.222222 %
+epoch 4, last training batch 0.446027, val perf 77.000000 %
+epoch 5, last training batch 0.410698, val perf 80.500000 %
+epoch 6, last training batch 0.341046, val perf 80.055556 %
+epoch 7, last training batch 0.343759, val perf 78.388889 %
+epoch 8, last training batch 0.374055, val perf 77.500000 %
+epoch 9, last training batch 0.281599, val perf 78.722222 %
+epoch 10, last training batch 0.321713, val perf 79.000000 %
+test perf: 0.805
+[('image shape', 42, 104), ('filter shape', [(100, 1, 1, 104), (100, 1, 2, 104), (100, 1, 3, 104)]), ('pool size', [(42, 1), (41, 1), (40, 1)]), ('hidden_units', [100, 2]), ('dropout', 0.5), ('batch_size', 25), ('non_static', False), ('conv_non_linear', 'relu'), ('sqr_norm_lim', 9)]
+test size 1000
+test perf 79.000000 %

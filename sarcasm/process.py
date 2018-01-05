@@ -10,6 +10,8 @@ from pprint import pprint
 import gensim
 import logging
 from collections import Counter
+from textblob import TextBlob
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
@@ -34,7 +36,7 @@ CLF_FNAME = "../sentiment/clf_pipe.pkl"
 RAND_SEED = 178
 CUTOFF = 0 #TODO check other values, and that they work with ngrams code
 MAX_L_GIVEN = 100 # never reached in tweet data so far
-MAX_NGRAM = 5 # must be <= max ngram size in sentiment model (5 at the moment), 0 for just embeddings
+MAX_NGRAM = 4 # must be <= max ngram size in sentiment model (5 at the moment), 0 for just embeddings
 
 def read_data_file(data_fname, max_l):
     tweets = []
@@ -93,7 +95,7 @@ def train_test(vocab):
     WS, ngram_idx_map = get_WS(w2v)
     print("WS shape: {}".format(WS.shape))
 
-    np.random.shuffle(train_data) # needed?
+    np.random.shuffle(train_data) # needed? #RANDOM
 
     pickle.dump((train_data, max_l, WS, ngram_idx_map), open(output_train_fname, "wb"))
     print("dataset created!")
@@ -133,6 +135,10 @@ def get_WS(w2v):
     ngram_idx_map = {}
 
     index = 1 # first row is left 0, for padding in the cnn. This is also neutral sentiment.
+    # For Vader Sentiment analysis
+#    vader_analyzer = SentimentIntensityAnalyzer()
+
+
     for ngram in ngrams_in_data:
         ngram_idx_map[ngram] = index
 
@@ -143,7 +149,18 @@ def get_WS(w2v):
         # set sentiment embedding
         for n in range(MAX_NGRAM): # for 1, 2, ... length ngrams
             sub_ngram = ' '.join(words[-1 - n:]) 
-            sent = features_to_sent.get(sub_ngram, 0.0) # default to neutral 0 sentiment
+
+            # Naive Bayes Sentiment feature --------------------------------
+            sent = features_to_sent.get(sub_ngram, 0.0) # default to neutral 0
+            # --------------------------------------------------------------
+
+#            # TextBlob sentiment feature -----------------------------------
+#            sent = TextBlob(sub_ngram).sentiment.polarity
+#            # --------------------------------------------------------------
+
+#            # Vader sentiment feature -------------------------------------
+#            sent = vader_analyzer.polarity_scores(sub_ngram)['compound']
+#            # -------------------------------------------------------------
             WS[index,k+n] = sent
 
         index += 1
@@ -211,11 +228,6 @@ if __name__=="__main__":
     # build vocab and sentiment
     print('create_vocab')
     vocab = create_vocab()
-
-    print("Check vocab")
-    words = ['rey', 'andrew']
-    for word in words:
-        print("{} is in vocab: {}".format(word, word in vocab))
 
     print("vocab size is {}.".format(len(vocab)))
     print('train_test')
